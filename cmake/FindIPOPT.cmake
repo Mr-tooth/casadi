@@ -48,7 +48,7 @@ if(IPOPT_FOUND)
 
   foreach(LIB ${IPOPT_LIBRARIES})
     find_library(LIB_FULL_${LIB} NAMES ${LIB} PATHS ${IPOPT_LIBRARY_DIRS})
-    target_link_libraries(ipopt INTERFACE ${LIB_FULL_${LIB}})
+    target_link_libraries(ipopt INTERFACE ${IPOPT_LIBRARIES})
   endforeach()
   target_include_directories(ipopt INTERFACE ${IPOPT_INCLUDE_DIRS})
   if("${CMAKE_CXX_COMPILER_ID}" STREQUAL "MSVC")
